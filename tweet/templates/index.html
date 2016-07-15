@@ -8,48 +8,58 @@
 
 {% block head_ %}
     <div class="blog-header">
-        <h1 class="blog-title">গিরিঙ্গিবাজ</h1>
-        <i class="fa fa-heart" aria-hidden="true"></i>
+        <h1 class="blog-title">
+            <span style="color:#f7ca18">গি</span>
+            <span style="color:#f2784b">রি</span>
+            <span style="color:#1f3a93">ঙ্গি</span>
+            <span style="color:#87d37c">বা</span>
+            <span style="color:#26A65B">জ</span>
+        </h1>
+        <!-- <h1> 	&#9786	</h1> -->
     </div>
+
 {% endblock %}
 
 {% block main_ %}
     <div class="col-sm-8 blog-main">
 
         <div class="blog-post">
-            <p>
+            <p class="greetings">
                 কি এত ভাবেন? বলেন কিছু, আমরাও শুনি।
             </p>
             <form action="{% url 'tweet' %}" method="post">
                 {% csrf_token %}
                 {{ tweet_form.content }} <br>
-                <input class="btn btn-info" type="submit" value="Tweet">
+                <input class="btn btn-success" style="font-weight:900; font-size:17px" type="submit" value="সাবমিট">
             </form>
         </div><!-- /.blog-post -->
         <!--here 'tweets' came from the 'tweet' models 'timeline' view-->
         {% for tw in tweets %}
         <div class="blog-post">
             <p>
-                {{ tw.content|safe }}<br><hr>
+                {{ tw.content|safe }}<br>
                 <small class="small">
-                    লিখসে -
+                    পোস্ট লিখেছেন -
                     <!-- in the "href" we can pass data like "pk", accessing by the structure the current object is based on-->
                     <a href="{% url 'profile' pk=tw.tweeter.user.pk %}">{{ tw.tweeter.user.username|capfirst }}</a>
-                </small>
+                </small><br>
+                <small class="small">
+                    সময় - {{ tw.added }}
+                </small><hr>
             </p>
                 {% user_likes_or_not tw.pk request.user.id as is_liked %}
                     {% if is_liked %}
-                    <button class="btn btn-default likes-button" type="button"
-                    data-ansid="{{ tw.pk }}">Unlike</button>
-                    <i> Total Likes: </i><strong id="{{tw.pk}}" class="like-count">{{ tw.likes }}</strong>
+                    <button class="btn btn-info likes-button" type="button"
+                    data-ansid="{{ tw.pk }}">আনলাইক</button>
+                    <strong  class="distance">Total Likes:</strong><strong id="{{tw.pk}}" class="like-count"> {{ tw.likes }}</strong>
                     {% endif %}
                     {% if not is_liked %}
-                    <button class="btn btn-default likes-button" type="button"
-                    data-ansid="{{ tw.pk }}">Like</button>
-                    <i> Total Likes: </i><strong id="{{tw.pk}}" class="like-count">{{ tw.likes }}</strong>
+                    <button class="btn btn-info likes-button" type="button"
+                    data-ansid="{{ tw.pk }}">লাইক</button>
+                    <strong  class="distance">Total Likes:</strong><strong id="{{tw.pk}}" class="like-count"> {{ tw.likes }}</strong>
                     {% endif %}
             <!-- here a single tweet is being represented by "tw"-->
-            <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=tw.pk %}"> কিছু বলতে চান?</a>
+            <a class="btn btn-primary" href="{% url 'add_comment_to_post' pk=tw.pk %}">কমেন্ট</a>
         </div>
         <!-- again, remember the object reference instance "tw" here-->
         {% for comment in tw.comments.all %}
@@ -62,12 +72,12 @@
                         <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}">Add<span class="glyphicon glyphicon-ok"></span></a>
                     {% endif %}
                 </div>
-                <strong>{{ comment.author }}</strong>
+                <strong>কমেন্ট করেছেন - {{ comment.author }}</strong>
                 <p>{{ comment.text|linebreaks }}</p>
             </div>
             {% endif %}
         {% empty %}
-            <p>No comments here yet :(</p>
+            <p>No comments here yet.</p>
         {% endfor %}
         <hr>
         {% endfor %}

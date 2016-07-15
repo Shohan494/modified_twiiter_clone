@@ -2,17 +2,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>গিরিঙ্গিবাজ অ্যাপ</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>গিরিঙ্গিবাজ অ্যাপ</title>
+    <meta content="width=1000, initial-scale=1.0, maximum-scale=1.0" name="viewport">
 
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/custom.css' %}" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'flatui/dist/css/flat-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'docs/assets/css/demo.css' %}">
+    <link href="{% static 'flatui/img/favicon.ico' %}" rel="shortcut icon">
+    <script type="text/javascript" charset="utf-8" async="" src="https://platform.twitter.com/js/button.552a34de542f2646ca0c08da6760c341.js"></script>
+    <style>
+    body {
+        background-image: url(/static/flatui/img.jpg);
+        background-repeat:no-repeat;
+        background-size:cover;
+    }
+    </style>
+
 </head>
 
 <body>
@@ -34,7 +43,8 @@
 
 <footer class="blog-footer">
     <p>
-        গিরিঙ্গিবাজ - মেড বাই গুটিবাজ উইথ জ্যাঙ্গো
+        গিরিঙ্গিবাজ - মেড উইথ <span class="fui-heart"></span> পাওয়ারড বাই - <a href="https://www.djangoproject.com/">জ্যাঙ্গো</a>,
+         ক্রিয়েটর - <a href="https://www.facebook.com/shohanulalam.shohan">সোহানুল আলম</a>
     </p>
 </footer>
 
@@ -61,8 +71,8 @@ $('.follow_btn').on('click', function () {
 </script>
 <script type="text/javascript">
 $(".likes-button").click(function(e) {
-    if ($(this).html() == 'Like') {
-        $(this).html('Unlike');
+    if ($(this).html() == 'লাইক') {
+        $(this).html('আনলাইক');
         //alert("js working");
         // error was there for "data" insted of "attr"
         var ansid = $(this).attr("data-ansid");
@@ -71,7 +81,7 @@ $(".likes-button").click(function(e) {
             type: 'get',
             data: {id: ansid}
         }).success(function (data) {
-            alert("success");
+            alert("আপনি লাইক দিয়েছেন");
             $('#'+ansid).html(data);
         }).fail(function (err) {
             alert(err);
@@ -80,7 +90,7 @@ $(".likes-button").click(function(e) {
 
     else {
         //$(this).html('Like');
-        $(this).html('Like');
+        $(this).html('লাইক');
         //alert("js working");
         // error was there for "data" insted of "attr"
         var ansid = $(this).attr("data-ansid");
@@ -89,7 +99,7 @@ $(".likes-button").click(function(e) {
             type: 'get',
             data: {id: ansid}
         }).success(function (data) {
-            alert("success");
+            alert("আপনি আনলাইক দিয়েছেন");
             $('#'+ansid).html(data);
         }).fail(function (err) {
             alert(err);

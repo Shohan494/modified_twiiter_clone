@@ -13,7 +13,7 @@
 {% block main_ %}
     <div class="col-sm-8 blog-main">
         <h4>
-            আপনে মেম্বার? কইবেন না?<a href="{% url 'sign_in' %}"> আসেন, আসেন</a>
+        আপনি মেম্বার?<a href="{% url 'sign_in' %}"> আসেন, আসেন</a>
         </h4>
         <div class="blog-post">
             <form action="{% url 'sign_up_process' %}" method="post">
@@ -53,8 +53,7 @@
                     {{ form.password2 }} <br>
                     <small>{{ form.password2.help_text }}</small>
                 </p>
-
-                <button type="submit">লিখসেন ঠিক মতো? ক্লিক করেন</button>
+                <input class="btn btn-success btn-hg" type="submit" value="লিখসেন ঠিক মতো? ক্লিক করেন" style="font-weight:900; font-size:17px">
             </form>
 
         </div>

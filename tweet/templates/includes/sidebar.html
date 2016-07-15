@@ -2,11 +2,11 @@
 <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
     <div class="sidebar-module">
         {% current_time "%Y-%m-%d" as the_date %}
-        <p>আজ {{ the_date }}.</p>
+        <p>আজ:  <span style="font-weight:900"> {{ the_date }}</span></p>
         {% current_time "%I:%M %p" as the_time %}
-        <p>এখন বাজে {{ the_time }}.</p>
+        <p>এখন বাজে:  <span style="font-weight:900"> {{ the_time }}</span></p>
         <br>
-        <h4>কাউরে চিনেন কি না দেখেন তো?</h4><hr>
+        <h4 class="fnf">কেউ কি পরিচিত?</h4><hr>
         <p>
             {% if request.user.is_authenticated %}
                 {% people_you_may_know request.user.id as not_followed_people %}
@@ -18,9 +18,9 @@
             {% endif %}
         </p>
         <br>
-        <h4><a href="{% url 'following_list' %}">কারে কারে আমার ভাল্লাগে?</a></h4>
+        <h4><a class="fnf" href="{% url 'following_list' %}">ফলো করি যাদের</a></h4>
         <hr>
-        <h4><a href="{% url 'follower_list' %}">আমারে কেডা সেলিব্রিটি ভাবে?</a></h4>
+        <h4><a class="fnf" href="{% url 'follower_list' %}">ফলো করে যারা</a></h4>
         <hr>
     </div>
 </div>

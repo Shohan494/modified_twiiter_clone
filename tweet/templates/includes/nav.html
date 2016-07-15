@@ -1,11 +1,11 @@
 <nav class="blog-nav">
-    <a class="blog-nav-item {% if home %}{{ home }}{% endif %}" href="/">টাইমলাইন</a>
+    <a class="blog-nav-item {% if home %}{{ home }}{% endif %}" href="/"><span class="fui-home"></span> হোমপেজ</a>
     <a class="blog-nav-item {% if sign %}{{ sign }}{% endif %}"
        {% if user.is_authenticated %}
-       href="/">{{ user.username|capfirst }}
-       <a class="blog-nav-item" href={% url "logout" %}>বাইর হইয়া যামু</a>
+       href="/"><span class="fui-user"></span>ওয়েলকাম, {{ user.username|capfirst }}
+       <a class="blog-nav-item" href={% url "logout" %}><span class="fui-power"></span> বিদায়</a>
        {% else %}
-       href="{% url 'sign_up' %}">নিবন্ধন/প্রবেশ{{ request.user.username }}
+       href="{% url 'sign_up' %}"><span class="fui-triangle-right-large"></span> নিবন্ধন/প্রবেশ{{ request.user.username }}
        {% endif %}
     </a>
 </nav>

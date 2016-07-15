@@ -1,239 +1,182 @@
-/*
- * Globals
- */
+.distance {
+    margin-left: 20px;
+}
+.like-count {
+    margin-right: 20px;
+}
 
+.fnf {
+    color: #16a085;
+}
+.greetings {
+    font-size: 18px;
+    font-weight: 900;
+}
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: #555;
+    color: #555;
+    font-family: Georgia,"Times New Roman",Times,serif;
 }
-
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-  margin-top: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  color: #333;
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    color: #333;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+    margin-top: 0;
 }
-
-
-/*
- * Override Bootstrap's default container.
- */
-
 @media (min-width: 1200px) {
-  .container {
+.container {
     width: 970px;
-  }
 }
-
-
-/*
- * Masthead for nav
- */
-
+}
 .blog-masthead {
-  background-color: #428bca;
-  -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
-          box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+    background-color: #1e62a1;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1) inset;
 }
 
-/* Nav links */
 .blog-nav-item {
-  position: relative;
-  display: inline-block;
-  padding: 10px;
-  font-weight: 500;
-  color: #cdddeb;
+    color: #cdddeb;
+    display: inline-block;
+    font-weight: 900;
+    padding: 10px;
+    position: relative;
 }
-.blog-nav-item:hover,
-.blog-nav-item:focus {
-  color: #fff;
-  text-decoration: none;
+.blog-nav-item:hover, .blog-nav-item:focus {
+    color: #fff;
+    text-decoration: none;
 }
-
-/* Active state gets a caret at the bottom */
 .blog-nav .active {
-  color: #fff;
+    color: #fff;
+    font-size: 22px;
 }
-.blog-nav .active:after {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 0;
-  margin-left: -5px;
-  vertical-align: middle;
-  content: " ";
-  border-right: 5px solid transparent;
-  border-bottom: 5px solid;
-  border-left: 5px solid transparent;
+.blog-nav .active::after {
+    border-bottom: 5px solid;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    bottom: 0;
+    content: " ";
+    height: 0;
+    left: 50%;
+    margin-left: -5px;
+    position: absolute;
+    vertical-align: middle;
+    width: 0;
 }
-
-
-/*
- * Blog name and description
- */
-
 .blog-header {
-  padding-top: 20px;
-  padding-bottom: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 .blog-title {
-  margin-top: 30px;
-  margin-bottom: 0;
-  font-size: 60px;
-  font-weight: normal;
+    font-size: 60px;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 30px;
 }
 .blog-description {
-  font-size: 20px;
-  color: #999;
+    color: #999;
+    font-size: 20px;
 }
-
-
-/*
- * Main column and sidebar layout
- */
-
 .blog-main {
-  font-size: 18px;
-  line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.5;
 }
-
-/* Sidebar modules for boxing content */
 .sidebar-module {
-  padding: 15px;
-  margin: 0 -15px 15px;
+    margin: 0 -15px 15px;
+    padding: 15px;
 }
 .sidebar-module-inset {
-  padding: 15px;
-  background-color: #f5f5f5;
-  border-radius: 4px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    padding: 15px;
 }
-.sidebar-module-inset p:last-child,
-.sidebar-module-inset ul:last-child,
-.sidebar-module-inset ol:last-child {
-  margin-bottom: 0;
+.sidebar-module-inset p:last-child, .sidebar-module-inset ul:last-child, .sidebar-module-inset ol:last-child {
+    margin-bottom: 0;
 }
-
-
-/* Pagination */
 .pager {
-  margin-bottom: 60px;
-  text-align: left;
+    margin-bottom: 60px;
+    text-align: left;
 }
 .pager > li > a {
-  width: 140px;
-  padding: 10px 20px;
-  text-align: center;
-  border-radius: 30px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    text-align: center;
+    width: 140px;
 }
-
-
-/*
- * Blog posts
- */
-
 .blog-post {
-  margin-bottom: 60px;
+    background-color: oldlace;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.comment {
+    background-color: whitesmoke;
+    margin-bottom: 30px;
+    padding: 20px;
 }
 .blog-post-title {
-  margin-bottom: 5px;
-  font-size: 40px;
+    font-size: 40px;
+    margin-bottom: 5px;
 }
 .blog-post-meta {
-  margin-bottom: 20px;
-  color: #999;
+    color: #999;
+    margin-bottom: 20px;
 }
-
-
-/*
- * Footer
- */
-
 .blog-footer {
-  padding: 40px 0;
-  color: #999;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-top: 1px solid #e5e5e5;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e5e5e5;
+    color: #999;
+    padding: 40px 0;
+    text-align: center;
 }
 .blog-footer p:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
-
-
-/* like button */
-
-/*-- like button --*/
-/*
-title: Periscope Likes Tutorial
-date: Aug 4, 2013
-author: Zan Ilic
-available at: http://zanilic.com/periscope-likes-tutorial-jquery-css3
-*/
 button.likes {
-  padding: 0;
+    padding: 0;
 }
-
 #heart-icon {
-  color: #f55567;
-  font-size: 22px;
-  border: 1px;
-  opacity: 1;
-  background: none;
-  transition: .3s ease-in-out;
-}
-
-#heart-icon:hover {
-  border: 1px;
-  background: none;
-  cursor: pointer;
-  transition: .5s ease-in-out;
-}
-
-#heart-icon:focus {
-  outline: 0;
-  border: 1px;
-}
-
-#heart-counter {
-  font-weight: 700;
-  font-size: 0.8em;
-  opacity: 1;
-  font-size: 13px;
-  color: #f55567;
-}
-
-
-
-/* Animations */
-
-@keyframes flows {
-  0% {
-    opacity: 0;
-    bottom: 0%;
-    left: 10%;
-  }
-  40% {
-    opacity: 0.8;
-  }
-  50% {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px none;
+    color: #f55567;
+    font-size: 22px;
     opacity: 1;
-    left: 0%;
-  }
-  60% {
-    opacity: 0.3;
-  }
-  80% {
-    bottom: 60%;
-  }
-  100% {
+    transition: all 0.3s ease-in-out 0s;
+}
+#heart-icon:hover {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px none;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out 0s;
+}
+#heart-icon:focus {
+    border: 1px none;
+    outline: 0 none;
+}
+#heart-counter {
+    color: #f55567;
+    font-size: 13px;
+    font-weight: 700;
+    opacity: 1;
+}
+@keyframes flows {
+0% {
+    bottom: 0;
+    left: 10%;
     opacity: 0;
+}
+40% {
+    opacity: 0.8;
+}
+50% {
+    left: 0;
+    opacity: 1;
+}
+60% {
+    opacity: 0.3;
+}
+80% {
+    bottom: 60%;
+}
+100% {
     bottom: 80%;
-    left: 0%;
-  }
+    left: 0;
+    opacity: 0;
+}
 }

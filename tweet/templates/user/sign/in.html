@@ -6,7 +6,7 @@
 
 {% block head_ %}
     <div class="blog-header">
-        <h3 class="blog-title">আসুন, কথা বলি</h3>
+        <h3 class="blog-title">আসেন, কথা বলি</h3>
     </div>
 {% endblock %}
 
@@ -16,7 +16,7 @@
             <form action="{% url 'sign_in_process' %}" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit">নিশ্চিন্তে প্রবেশ করুন</button>
+                <input class="btn btn-success btn-hg" type="submit" value="নিশ্চিন্তে প্রবেশ করেন" style="font-weight:900; font-size:17px">
             </form>
 
         </div><!-- /.blog-post -->
