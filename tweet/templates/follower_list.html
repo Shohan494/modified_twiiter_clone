@@ -22,6 +22,5 @@
     {% for f in people_who_following_me %}
         <!-- remember, in html, you have to use the url "name"-->
         <h5><a href="{% url 'follower_profile' pk=f.pk %}">{{ f }}</a><h5>
-        <br>
     {% endfor %}
 {% endblock %}
