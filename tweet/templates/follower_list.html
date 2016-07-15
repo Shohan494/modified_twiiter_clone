@@ -7,15 +7,21 @@
 
 {% block head_ %}
     <div class="blog-header">
-        <h1 class="blog-title">গিরিঙ্গিবাজ</h1>
+        <h1 class="blog-title">
+            <span style="color:#f7ca18">গি</span>
+            <span style="color:#f2784b">রি</span>
+            <span style="color:#1f3a93">ঙ্গি</span>
+            <span style="color:#87d37c">বা</span>
+            <span style="color:#26A65B">জ</span>
+        </h1>
     </div>
 {% endblock %}
 
 {% block main_ %}
-    <h2>এরা আমারে ফলো করে</h2>
+    <h4>আমাকে ফলো করছেন যারা</h4><hr>
     {% for f in people_who_following_me %}
         <!-- remember, in html, you have to use the url "name"-->
-        <h4><a href="{% url 'follower_profile' pk=f.pk %}">{{ f }}</a><h4>
+        <h5><a href="{% url 'follower_profile' pk=f.pk %}">{{ f }}</a><h5>
         <br>
     {% endfor %}
 {% endblock %}

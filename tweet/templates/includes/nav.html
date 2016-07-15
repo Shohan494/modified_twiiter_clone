@@ -2,8 +2,8 @@
     <a class="blog-nav-item {% if home %}{{ home }}{% endif %}" href="/"> হোমপেজ</a>
     <a class="blog-nav-item {% if sign %}{{ sign }}{% endif %}"
        {% if user.is_authenticated %}
-       href="/"><span class="fui-user"></span>ওয়েলকাম, {{ user.username|capfirst }}
-       <a class="blog-nav-item" href={% url "logout" %}><span class="fui-power"></span> বিদায়</a>
+       href="/">ওয়েলকাম, {{ user.username|capfirst }}
+       <a class="blog-nav-item" id="logout" href={% url "logout" %}> বিদায় বন্ধুগণ</a>
        {% else %}
        href="{% url 'sign_up' %}"> নিবন্ধন/প্রবেশ{{ request.user.username }}
        {% endif %}

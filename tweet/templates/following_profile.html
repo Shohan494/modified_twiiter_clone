@@ -7,12 +7,18 @@
 
 {% block head_ %}
     <div class="blog-header">
-        <h1 class="blog-title">গিরিঙ্গিবাজ</h1>
+        <h1 class="blog-title">
+            <span style="color:#f7ca18">গি</span>
+            <span style="color:#f2784b">রি</span>
+            <span style="color:#1f3a93">ঙ্গি</span>
+            <span style="color:#87d37c">বা</span>
+            <span style="color:#26A65B">জ</span>
+        </h1>
     </div>
 {% endblock %}
 
 {% block main_ %}
-    <h2>এই মানুষের পরিচয় কি?</h2>
+    <h4>এই মানুষের পরিচয় কি?</h4><hr>
     <p>
         <!-- accessing data, passed data is "prof".
         "user_id" is related via "UserProfile"-->
@@ -29,6 +35,6 @@
         <!--related name doesn't work here, in the place of "user"-->
         <strong>কবে থেকে আছি:</strong> {{ prof.user.date_joined }}
     </p>
-    <a href="{% url 'unfollow' pk=prof.user_id %}">Unfollow User</a>
+    <a class="btn btn-danger" href="{% url 'unfollow' pk=prof.user_id %}">Unfollow User</a>
 
 {% endblock %}
