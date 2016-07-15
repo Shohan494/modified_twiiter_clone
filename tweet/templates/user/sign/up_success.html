@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block nav_ %}
+    {% include 'includes/nav.html' with sign='active' %}
+{% endblock %}
+
+{% block head_ %}
+    <div class="blog-header">
+        <center><h1 class="blog-title">কাজ হইয়া গেছে, চিল করেন</h1></center>
+        <hr>
+        <center><h2><a href="{% url 'sign_up' %}">চলুন, ফেরত যাই</h2></center>
+    </div>
+{% endblock %}
