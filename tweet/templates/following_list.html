@@ -21,7 +21,7 @@
     <h4>আপাতত এদের ফলো করছি</h4><hr>
     {% for f in people_i_follow %}
         <!-- remember, in html, you have to use the url "name"-->
-        <h5>{{f.id}}.<a href="{% url 'following_profile' pk=f.pk %}"> {{ f }}</a></h5>
+        <h5><a href="{% url 'following_profile' pk=f.pk %}"> {{ f }}</a></h5>
         <br>
     {% endfor %}
 {% endblock %}
