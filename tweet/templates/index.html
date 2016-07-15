@@ -23,7 +23,7 @@
 {% block main_ %}
     <div class="col-sm-8 blog-main">
 
-        <div class="blog-post">
+        <div class="blog-post-form">
             <p class="greetings">
                 কি এত ভাবেন? বলেন কিছু, আমরাও শুনি।
             </p>
@@ -37,7 +37,7 @@
         {% for tw in tweets %}
         <div class="blog-post">
             <p>
-                {{ tw.content|safe }}<br>
+                {{ tw.content|safe }}<br><hr>
                 <small class="small">
                     পোস্ট লিখেছেন -
                     <!-- in the "href" we can pass data like "pk", accessing by the structure the current object is based on-->
@@ -72,7 +72,7 @@
                         <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}">Add<span class="glyphicon glyphicon-ok"></span></a>
                     {% endif %}
                 </div>
-                <strong>কমেন্ট করেছেন - {{ comment.author }}</strong>
+                <strong>কমেন্ট করেছেন - {{ comment.author }}</strong><hr>
                 <p>{{ comment.text|linebreaks }}</p>
             </div>
             {% endif %}
